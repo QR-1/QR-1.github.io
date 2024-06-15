@@ -3,8 +3,24 @@
 <head>
 <link href="style.css" rel="stylesheet" type="text/css" />
 <title>QR-1 manual lookup</title>
+
+<script>
+  function redirectToUrl() {
+      var code = document.getElementById("codeInput").value;
+      var fullUrl = code+".html";
+      window.location.href = fullUrl;
+}
+</script>
+
 </head>
 <body>
   <p>QR-1: Manual lookup</p>
   <p><a href="TEST.html"> test.html</a></p>
+
+  <h1>Enter Your Code</h1>
+  <form onsubmit="redirectToUrl(); return false;">
+      <label for="codeInput">Code:</label>
+      <input type="text" id="codeInput" name="codeInput" required>
+      <button type="submit">Go</button>
+  </form>
 </body>
